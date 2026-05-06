@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frederico Auto Mecânica | Caratinga MG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); }
+    </style>
+</head>
+<body class="p-6 max-w-md mx-auto">
+    <header class="mb-10 text-center">
+        <h1 class="text-3xl font-semibold text-slate-800">Mecânica Frederico</h1>
+        <p class="text-slate-500">Confiança e Tecnologia para seu Veículo</p>
+    </header>
+
+    <main class="space-y-8">
+        <section class="glass p-6 rounded-3xl shadow-sm">
+            <h2 class="text-xl font-semibold mb-4 text-slate-700">Especialidades:</h2>
+            <ul class="space-y-3 text-slate-600">
+                <li class="flex items-center gap-2">🔧 Mecânica Geral e Preventiva</li>
+                <li class="flex items-center gap-2">🚗 Alinhamento e Balanceamento</li>
+                <li class="flex items-center gap-2">⚡ Injeção Eletrônica</li>
+                <li class="flex items-center gap-2">❄️ Ar-Condicionado Automotivo</li>
+            </ul>
+        </section>
+
+        <section class="glass p-6 rounded-3xl shadow-sm">
+            <h2 class="text-xl font-semibold mb-4 text-slate-700">Check-up de Viagem</h2>
+            <p class="text-sm text-slate-500 mb-4">Selecione os itens para revisão:</p>
+            <div class="space-y-3">
+                <label class="flex items-center gap-2 text-slate-600"><input type="checkbox" class="check"> Freios</label>
+                <label class="flex items-center gap-2 text-slate-600"><input type="checkbox" class="check"> Óleo e Filtros</label>
+                <label class="flex items-center gap-2 text-slate-600"><input type="checkbox" class="check"> Pneus</label>
+                <label class="flex items-center gap-2 text-slate-600"><input type="checkbox" class="check"> Suspensão</label>
+                <button onclick="sendCheckup()" class="w-full bg-slate-800 text-white p-3 rounded-xl font-semibold mt-2">Pedir Orçamento Check-up</button>
+            </div>
+        </section>
+
+        <div class="text-center text-sm text-slate-400 italic">
+            "Seu carro em boas mãos, sua família em segurança."
+        </div>
+
+        <a href="https://wa.me/553333215911" class="block w-full bg-green-500 text-white text-center p-4 rounded-2xl font-semibold shadow-lg hover:bg-green-600 transition-all">
+            Agendar Manutenção
+        </a>
+        
+        <p class="text-center text-xs text-slate-400">Aceitamos PIX e Parcelamos 💳 💠</p>
+    </main>
+
+    <script>
+        function sendCheckup() {
+            window.location.href = "https://wa.me/553333215911?text=Olá, gostaria de um orçamento para revisão de viagem.";
+        }
+    </script>
+</body>
+</html>

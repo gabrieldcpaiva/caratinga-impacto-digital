@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloco Mais Materiais de Construção | Caratinga MG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); }
+    </style>
+</head>
+<body class="p-6 max-w-md mx-auto">
+    <header class="mb-10 text-center">
+        <h1 class="text-3xl font-semibold text-slate-800">Bloco Mais</h1>
+        <p class="text-slate-500">Materiais do Básico ao Acabamento</p>
+    </header>
+
+    <main class="space-y-8">
+        <section class="glass p-6 rounded-3xl shadow-sm">
+            <h2 class="text-xl font-semibold mb-4 text-slate-700">Tudo para sua obra:</h2>
+            <ul class="space-y-3 text-slate-600">
+                <li class="flex items-center gap-2">🧱 Tijolos e Blocos de Qualidade</li>
+                <li class="flex items-center gap-2">🏗️ Cimento, Areia e Brita</li>
+                <li class="flex items-center gap-2">🚿 Hidráulica e Elétrica</li>
+                <li class="flex items-center gap-2">🚛 Entrega Rápida em Caratinga</li>
+            </ul>
+        </section>
+
+        <section class="glass p-6 rounded-3xl shadow-sm">
+            <h2 class="text-xl font-semibold mb-4 text-slate-700">Simulador de Tijolos</h2>
+            <p class="text-sm text-slate-500 mb-4">Estimativa para parede (tijolo 19x19):</p>
+            <div class="space-y-4">
+                <input type="number" id="wallArea" placeholder="Área da parede (m²)" class="w-full p-3 rounded-xl border border-slate-200">
+                <button onclick="calcBricks()" class="w-full bg-slate-800 text-white p-3 rounded-xl font-semibold">Calcular Quantidade</button>
+                <p id="brickResult" class="text-center font-semibold text-slate-800 hidden"></p>
+            </div>
+        </section>
+
+        <div class="text-center text-sm text-slate-400 italic">
+            "Sua construção merece o melhor alicerce."
+        </div>
+
+        <a href="https://wa.me/553333221441" class="block w-full bg-green-500 text-white text-center p-4 rounded-2xl font-semibold shadow-lg hover:bg-green-600 transition-all">
+            Fazer Orçamento no WhatsApp
+        </a>
+        
+        <p class="text-center text-xs text-slate-400">Aceitamos PIX e Cartões 💳 💠</p>
+    </main>
+
+    <script>
+        function calcBricks() {
+            const area = document.getElementById('wallArea').value;
+            const res = document.getElementById('brickResult');
+            if(area) {
+                const qty = Math.ceil(area * 25); // ~25 bricks per m2
+                res.innerText = `Aprox. ${qty} tijolos necessários`;
+                res.classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estacionamento Caratinga | Centro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); }
+    </style>
+</head>
+<body class="p-6 max-w-md mx-auto">
+    <header class="mb-10 text-center">
+        <h1 class="text-3xl font-semibold text-slate-800">Estacionamento Caratinga</h1>
+        <p class="text-slate-500">Segurança e Comodidade no Coração da Cidade</p>
+    </header>
+
+    <main class="space-y-8">
+        <section class="glass p-6 rounded-3xl shadow-sm">
+            <h2 class="text-xl font-semibold mb-4 text-slate-700">Diferenciais:</h2>
+            <ul class="space-y-3 text-slate-600">
+                <li class="flex items-center gap-2">🛡️ Seguro contra Furto e Roubo</li>
+                <li class="flex items-center gap-2">👁️ Monitoramento 24h</li>
+                <li class="flex items-center gap-2">♿ Vagas Preferenciais</li>
+                <li class="flex items-center gap-2">📍 Localização Privilegiada</li>
+            </ul>
+        </section>
+
+        <section class="glass p-6 rounded-3xl shadow-sm">
+            <h2 class="text-xl font-semibold mb-4 text-slate-700">Calculadora de Estadia</h2>
+            <p class="text-sm text-slate-500 mb-4">Estime o valor da sua permanência:</p>
+            <div class="space-y-4">
+                <input type="number" id="hours" placeholder="Horas de permanência" class="w-full p-3 rounded-xl border border-slate-200">
+                <button onclick="calcPark()" class="w-full bg-slate-800 text-white p-3 rounded-xl font-semibold">Ver Estimativa</button>
+                <p id="parkResult" class="text-center font-semibold text-slate-800 hidden"></p>
+            </div>
+        </section>
+
+        <div class="text-center text-sm text-slate-400 italic">
+            "Sua tranquilidade começa pela vaga."
+        </div>
+
+        <a href="https://wa.me/553333212141" class="block w-full bg-green-500 text-white text-center p-4 rounded-2xl font-semibold shadow-lg hover:bg-green-600 transition-all">
+            Consultar Mensalidade
+        </a>
+        
+        <p class="text-center text-xs text-slate-400">Pague rápido com PIX 💠</p>
+    </main>
+
+    <script>
+        function calcPark() {
+            const h = document.getElementById('hours').value;
+            const res = document.getElementById('parkResult');
+            if(h) {
+                const total = h * 5; // Base estimate 5 reais/hour
+                res.innerText = `Estimativa: R$ ${total.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
+                res.classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>

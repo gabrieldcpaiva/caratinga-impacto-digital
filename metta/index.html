@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metta Engenharia & Topografia | Caratinga MG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); }
+    </style>
+</head>
+<body class="p-6 max-w-md mx-auto">
+    <header class="mb-10 text-center">
+        <h1 class="text-3xl font-semibold text-slate-800">Metta Engenharia</h1>
+        <p class="text-slate-500">Engenharia & Topografia com Precisão</p>
+    </header>
+
+    <main class="space-y-8">
+        <section class="glass p-6 rounded-3xl shadow-sm">
+            <h2 class="text-xl font-semibold mb-4 text-slate-700">O que entregamos:</h2>
+            <ul class="space-y-3 text-slate-600">
+                <li class="flex items-center gap-2">✅ Topografia Rural e Urbana</li>
+                <li class="flex items-center gap-2">✅ Projetos de Engenharia</li>
+                <li class="flex items-center gap-2">✅ Georreferenciamento</li>
+                <li class="flex items-center gap-2">✅ Desmembramento de Áreas</li>
+            </ul>
+        </section>
+
+        <section class="glass p-6 rounded-3xl shadow-sm">
+            <h2 class="text-xl font-semibold mb-4 text-slate-700">Micro-Ferramenta</h2>
+            <p class="text-sm text-slate-500 mb-4">Calcule a área do seu terreno em m²:</p>
+            <div class="space-y-4">
+                <input type="number" id="length" placeholder="Comprimento (m)" class="w-full p-3 rounded-xl border border-slate-200">
+                <input type="number" id="width" placeholder="Largura (m)" class="w-full p-3 rounded-xl border border-slate-200">
+                <button onclick="calcArea()" class="w-full bg-slate-800 text-white p-3 rounded-xl font-semibold">Calcular Agora</button>
+                <p id="result" class="text-center font-semibold text-slate-800 hidden"></p>
+            </div>
+        </section>
+
+        <div class="text-center text-sm text-slate-400 italic">
+            "Sua obra começa com uma medição perfeita."
+        </div>
+
+        <a href="https://wa.me/553333215588" class="block w-full bg-green-500 text-white text-center p-4 rounded-2xl font-semibold shadow-lg hover:bg-green-600 transition-all">
+            Solicitar Orçamento Grátis
+        </a>
+        
+        <p class="text-center text-xs text-slate-400">Pagamento facilitado via PIX 💠</p>
+    </main>
+
+    <script>
+        function calcArea() {
+            const l = document.getElementById('length').value;
+            const w = document.getElementById('width').value;
+            const res = document.getElementById('result');
+            if(l && w) {
+                res.innerText = `Área Total: ${(l*w).toLocaleString('pt-BR')} m²`;
+                res.classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
