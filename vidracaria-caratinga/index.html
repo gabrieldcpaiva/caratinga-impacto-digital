@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidraçaria Caratinga - Qualidade e Confiança</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+        .glass-effect { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans">
+    <header class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-2"><i class="fas fa-gem text-blue-600 text-2xl"></i><span class="text-xl font-bold tracking-tight">Vidraçaria <span class="text-blue-600">Caratinga</span></span></div>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-600"><a href="#servicos" class="hover:text-blue-600 transition">Serviços</a><a href="#sobre" class="hover:text-blue-600 transition">Sobre Nós</a><a href="#contato" class="hover:text-blue-600 transition">Contato</a></nav>
+            <a href="https://wa.me/5533999999999" class="bg-green-500 hover:bg-green-600 text-white px-6 py-2.5 rounded-full font-semibold transition flex items-center space-x-2"><i class="fab fa-whatsapp"></i><span>Orçamento Grátis</span></a>
+        </div>
+    </header>
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden hero-gradient text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl lg:text-6xl font-extrabold leading-tight mb-6">Transparência e <span class="text-blue-400">Excelência</span> para seu ambiente.</h1>
+                    <p class="text-lg text-slate-300 mb-8 max-w-lg">Box para banheiro, espelhos sob medida, janelas e portas de vidro temperado. Transformamos sua casa com segurança e o melhor acabamento de Caratinga.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#servicos" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold transition text-center">Ver Nossos Serviços</a>
+                    </div>
+                </div>
+                <div class="mt-12 lg:mt-0 relative"><div class="glass-effect p-4 rounded-2xl"><img src="https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?auto=format&fit=crop&q=80&w=800" class="rounded-xl shadow-2xl"></div></div>
+            </div>
+        </div>
+    </section>
+    <section id="servicos" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16"><h2 class="text-3xl font-bold text-slate-900 mb-4">Nossas Especialidades</h2><p class="text-slate-600 max-w-2xl mx-auto">Trabalhamos com os melhores materiais do mercado para garantir durabilidade e design sofisticado.</p></div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-2xl border border-slate-100 hover:border-blue-200 hover:shadow-xl transition group"><div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition"><i class="fas fa-bath text-xl"></i></div><h3 class="text-xl font-bold mb-3 text-slate-900">Box para Banheiro</h3><p class="text-slate-600">Vidros temperados de alta resistência com diversos tipos de acabamento para seu conforto e segurança.</p></div>
+                <div class="p-8 rounded-2xl border border-slate-100 hover:border-blue-200 hover:shadow-xl transition group"><div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition"><i class="fas fa-expand text-xl"></i></div><h3 class="text-xl font-bold mb-3 text-slate-900">Espelhos Sob Medida</h3><p class="text-slate-600">Espelhos bisotados e lapidados para salas, quartos e banheiros. Amplie seus ambientes com elegância.</p></div>
+                <div class="p-8 rounded-2xl border border-slate-100 hover:border-blue-200 hover:shadow-xl transition group"><div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition"><i class="fas fa-door-open text-xl"></i></div><h3 class="text-xl font-bold mb-3 text-slate-900">Portas e Janelas</h3><p class="text-slate-600">Projetos residenciais e comerciais em vidro temperado e laminado. Máxima vedação e isolamento.</p></div>
+            </div>
+        </div>
+    </section>
+    <footer id="contato" class="bg-slate-900 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-8">Pronto para transformar seu projeto?</h2>
+            <p class="text-slate-400 mb-12 max-w-xl mx-auto">Entre em contato hoje mesmo e receba uma visita técnica para medição sem compromisso.</p>
+            <div class="flex flex-col items-center space-y-6"><a href="https://wa.me/5533999999999" class="bg-green-500 hover:bg-green-600 px-10 py-4 rounded-full text-xl font-bold transition"><i class="fab fa-whatsapp mr-2"></i> Chamar no WhatsApp</a><p class="text-slate-500">Endereço: R. Princesa Isabel, 386 - Caratinga, MG</p></div>
+        </div>
+    </footer>
+</body>
+</html>
