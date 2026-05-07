@@ -5,6 +5,7 @@ Este documento contém as mensagens de prospecção personalizadas para as 10 em
 ---
 
 ## 1. Metta Engenharia & Topografia
+
 **Contato:** (33) 3321-5588 | WhatsApp: +55 33 3321-5588
 
 **Mensagem (WhatsApp):**
@@ -17,6 +18,7 @@ Este documento contém as mensagens de prospecção personalizadas para as 10 em
 ---
 
 ## 2. Bloco Mais Materiais
+
 **Contato:** (33) 3322-1441 | WhatsApp: +55 33 3322-1441
 
 **Mensagem (WhatsApp):**
@@ -29,11 +31,12 @@ Este documento contém as mensagens de prospecção personalizadas para as 10 em
 ---
 
 ## 3. Solução Contabilidade & Consultoria
+
 **Contato:** (33) 3321-1516 | WhatsApp: +55 33 3321-1516
 
 **Mensagem (WhatsApp):**
 > Olá, equipe Solução Contabilidade!
-> A inteligência tributária e contábil que vocês oferecem é essencial, mas o mercado contábil de Caratinga está mudando. Empresários buscam por contadores no Google baseados em autoridade e avaliações. 
+> A inteligência tributária e contábil que vocês oferecem é essencial, mas o mercado contábil de Caratinga está mudando. Empresários buscam por contadores no Google baseados em autoridade e avaliações.
 > Atualmente, a presença online de vocês não transmite o peso da expertise que possuem. Criamos um plano de reestruturação de imagem no Google Meu Negócio para posicioná-los como a escolha óbvia e premium da cidade.
 > Vejam o plano de ação aqui: [INSERIR LINK: solucao/proposta.html]
 > Vamos alinhar uma rápida conversa esta semana?
@@ -41,6 +44,7 @@ Este documento contém as mensagens de prospecção personalizadas para as 10 em
 ---
 
 ## 4. Frederico Auto Mecânica
+
 **Contato:** (33) 3321-5911 | WhatsApp: +55 33 3321-5911
 
 **Mensagem (WhatsApp):**
@@ -53,6 +57,7 @@ Este documento contém as mensagens de prospecção personalizadas para as 10 em
 ---
 
 ## 5. Estacionamento Caratinga
+
 **Contato:** (33) 3321-2141 | WhatsApp: +55 33 3321-2141
 **Local:** Centro, Caratinga, MG
 
@@ -66,11 +71,12 @@ Este documento contém as mensagens de prospecção personalizadas para as 10 em
 ---
 
 ## 6. Vidraçaria Caratinga
-**Contato:** (33) 99919-5748 / (33) 99956-6378 | Email: vidracariacaratinga@gmail.com
+
+**Contato:** (33) 99919-5748 / (33) 99956-6378 | Email: <vidracariacaratinga@gmail.com>
 
 **Mensagem (WhatsApp/Email):**
 > Olá, time da Vidraçaria Caratinga! Tudo ótimo?
-> Vocês entregam qualidade em boxes e espelhos sob medida, mas no mercado de alto padrão (arquitetura e interiores), a primeira impressão digital é quem dita o valor do serviço. 
+> Vocês entregam qualidade em boxes e espelhos sob medida, mas no mercado de alto padrão (arquitetura e interiores), a primeira impressão digital é quem dita o valor do serviço.
 > Desenvolvemos um conceito visual e de posicionamento no Google Meu Negócio para fazer com que a vidraçaria de vocês seja vista não apenas como uma loja, mas como uma grife de design em vidro na cidade.
 > Acessem o portal que preparamos para vocês: [INSERIR LINK: vidracaria-caratinga/proposta.html]
 > Vamos conversar para transformar essa visibilidade em mais orçamentos fechados?
@@ -78,6 +84,7 @@ Este documento contém as mensagens de prospecção personalizadas para as 10 em
 ---
 
 ## 7. Claudio Sapateiro
+
 **Contato:** Claudio Gonçalves Pinto - (33) 98409-4450 | Insta: @sapateiroclaudio
 
 **Mensagem (WhatsApp/Direct Insta):**
@@ -90,6 +97,7 @@ Este documento contém as mensagens de prospecção personalizadas para as 10 em
 ---
 
 ## 8. Vidraçaria Sousa
+
 **Contato:** (33) 99944-0298 | Insta: @vidracariasousa_
 
 **Mensagem (WhatsApp/Direct Insta):**
@@ -102,6 +110,7 @@ Este documento contém as mensagens de prospecção personalizadas para as 10 em
 ---
 
 ## 9. Só Vidros
+
 **Contato:** (33) 3322-3366 | Local: Av. Maria Catarina Cimini, 259
 
 **Mensagem (WhatsApp):**
@@ -114,10 +123,11 @@ Este documento contém as mensagens de prospecção personalizadas para as 10 em
 ---
 
 ## 10. Limpeza Pro (Start Shop AllPro)
+
 **Contato:** (33) 99828-0112 / (33) 98461-0243
 
 **Mensagem (WhatsApp):**
-> Olá, time da Limpeza Pro! 
+> Olá, time da Limpeza Pro!
 > O serviço de higienização de estofados depende diretamente de prova social (antes e depois) e confiança. Clientes em Caratinga buscam isso ativamente no Google, mas quem não tem um perfil impecável perde o serviço para quem tem.
 > Nós criamos uma estrutura que transforma suas avaliações e fotos em uma máquina de captação de clientes orgânicos no Google Meu Negócio.
 > Acessem o escopo do projeto aqui: [INSERIR LINK: limpeza-pro/proposta.html]
