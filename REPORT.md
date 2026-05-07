@@ -16,6 +16,9 @@ O projeto agora cobre os seguintes setores:
 - **Repositório:** https://github.com/gabrieldcpaiva/caratinga-impacto-digital
 - **Hub ao Vivo:** https://gabrieldcpaiva.github.io/caratinga-impacto-digital/
 
+## Falha Crítica Detectada
+- **Tailwind CDN:** O estilo de todos os 10 sites foi quebrado devido à expiração/atualização de pacotes do CDN do Tailwind CSS. O `find-and-replace` global para remover a trava de `integrity` foi executado, mas a renderização continuou quebrada. Operação pausada para evitar fricção cognitiva e preservar o tempo do usuário diante de urgências familiares.
+
 ## Update (Henry - Antigravity Agent)
 - Refatoração Visual do Hub (`index.html`) para a estética "Minimalist Luxury" (Dark Mode, UI Glassmorphism, Micro-animações GSAP).
 - Geração da base de Outreach com copys de alta conversão (gatilhos de urgência e exclusividade) salvas em `OUTREACH_REPORT.md` e espelhadas para Google Docs.
