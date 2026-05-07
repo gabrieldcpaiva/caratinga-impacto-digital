@@ -1,17 +1,19 @@
-# Projeto: Caratinga Impacto Digital
-## 1. Regras Comportamentais (Behavioral Rules)
-- A.N.T. 3-layer architecture e framework B.L.A.S.T. são obrigatórios.
-- Todo o código, relatórios e textos voltados ao usuário devem estar em PT-BR nativo.
-- Estética exigida: "Minimalist Luxury".
+# Projeto: Caratinga Impacto Digital (System Pilot)
 
-## 2. Invariantes Arquiteturais
-- **Layer 1 (Architecture):** SOPs em markdown no diretório `architecture/`.
-- **Layer 2 (Navigation):** Roteamento lógico executado pelo Agente.
-- **Layer 3 (Tools):** Scripts determinísticos (`tools/`).
-- Operações intermediárias e testes locais no diretório `.tmp/`.
+## 1. Project Constitution (Law)
+- **Protocol:** B.L.A.S.T. (Blueprint, Link, Architect, Stylize, Trigger).
+- **Architecture:** A.N.T. 3-Layer (Architecture, Navigation, Tools).
+- **Language:** Technical (EN), User-facing/Copy (PT-BR).
+- **Aesthetic:** Minimalist Luxury / Cinematic.
 
-## 3. Data Schema (Payloads)
-### 3.1 Input Schema (Dados Brutos dos Negócios)
+## 2. Behavioral Rules
+- Zero Friction: Gabriel is the Approver. Henry is the Executor.
+- Deterministic Logic: No guessing on business rules.
+- Local First: All operations in `.tmp/` before deployment.
+- No Apologies: Correct and execute.
+
+## 3. Data Schema (The Payload)
+### 3.1 Input Schema (Leads)
 ```json
 {
   "business_name": "string",
@@ -19,16 +21,24 @@
   "whatsapp": "string",
   "email": "string",
   "location": "string",
-  "instagram": "string"
+  "instagram": "string",
+  "category": "string"
 }
 ```
 
-### 3.2 Output Schema (Payload de Contato)
+### 3.2 Output Schema (Outreach Payload)
 ```json
 {
-  "business_name": "string",
-  "outreach_message": "string",
-  "gmb_proposal": "string",
-  "landing_page_url": "string"
+  "business_id": "string",
+  "recipient_name": "string",
+  "message_body": "string",
+  "link_url": "string",
+  "status": "pending | sent | failed",
+  "timestamp": "iso-date"
 }
 ```
+
+## 4. Architectural Invariants
+- **Layer 1 (Architecture):** SOPs in `architecture/`. Mandatory before coding.
+- **Layer 2 (Navigation):** Agent-led reasoning and tool orchestration.
+- **Layer 3 (Tools):** Atomic Python scripts in `tools/`. No side effects outside `.tmp/` or target APIs.

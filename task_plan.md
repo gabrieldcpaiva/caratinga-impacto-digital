@@ -1,18 +1,29 @@
-# Task Plan: Caratinga Impacto Digital
+# Task Plan: System Pilot Automation (Caratinga Impacto Digital)
 
-## Fases e Objetivos
-- [x] **Fase 1: B - Blueprint (Visão e Lógica)**
-  - [x] Criação do schema JSON em `gemini.md`.
-  - [x] Perguntas de Discovery respondidas com base no briefing.
-  - [x] Levantamento completo de leads da pasta References.
-- [x] **Fase 2: L - Link (Conectividade)**
-  - [x] Validar formato dos leads e preparar entrega de dados (exportação JSON/Docs).
-- [x] **Fase 3: A - Architect (The 3-Layer Build)**
-  - [x] Criar landing page estética e premium ("Minimalist Luxury").
-  - [x] Gerar scripts em Python/Node em `tools/` se necessário processamento de dados.
-- [x] **Fase 4: S - Stylize (Refinamento e UI)**
-  - [x] Finalizar visual da landing page ("Hub de Negócios").
-  - [x] Criar cópia de Outreach em PT-BR para cada lead.
-- [x] **Fase 5: T - Trigger (Implantação)**
-  - [x] Atualizar relatórios (REPORT.md, DECISIONS.md, RISKS.md, NEXT_3_ACTIONS.md).
-  - [x] Documentar Outreach em GDocs (ou formato compatível).
+## Phase 0: Initialization (Mandatory)
+- [x] Initialize Project Memory (gemini.md, findings.md, progress.md)
+- [x] Create directory structure (architecture/, tools/, .tmp/)
+- [ ] Answer Discovery Questions (Awaiting Gabriel)
+
+## Phase 1: B - Blueprint (Vision & Logic)
+- [ ] Define Data Schema in gemini.md [x]
+- [ ] Research GitHub/Resources for outreach automation
+- [ ] Approval of Blueprint
+
+## Phase 2: L - Link (Connectivity)
+- [ ] Verify API connections (WhatsApp/Email/GNB if applicable)
+- [ ] Minimal Handshake scripts in tools/
+
+## Phase 3: A - Architect (The 3-Layer Build)
+- [ ] Create Technical SOPs in architecture/
+- [ ] Build deterministic Tools in tools/
+- [ ] Integration of Navigation layer
+
+## Phase 4: S - Stylize (Refinement & UI)
+- [ ] Format Outreach messages (Slack/WhatsApp blocks)
+- [ ] Refine Landing Page UI (Minimalist Luxury)
+
+## Phase 5: T - Trigger (Deployment)
+- [ ] Cloud Transfer / Production Deployment
+- [ ] Automation Triggers (Webhooks/Cron)
+- [ ] Finalize Maintenance Log in gemini.md
