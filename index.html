@@ -3,61 +3,299 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impacto Caratinga - Transformação Digital</title>
+    <title>Impacto Caratinga | Transformação Digital & GMB</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            900: '#050505',
+                            800: '#0A0A0A',
+                            700: '#141414',
+                            400: '#A3A3A3',
+                            100: '#FAFAFA',
+                        },
+                        accent: {
+                            500: '#3B82F6', // Blue for trust
+                            400: '#60A5FA',
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                        'hero-glow': 'radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15), transparent 50%)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #FAFAFA;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            background: rgba(30, 30, 30, 0.8);
+            border-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(59, 130, 246, 0.1);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #ffffff, #a3a3a3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .button-primary {
+            background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+            box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.39);
+            transition: all 0.3s ease;
+        }
+        .button-primary:hover {
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.23);
+            transform: translateY(-1px);
+        }
+        .button-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .button-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans">
-    <section class="bg-blue-600 py-20 px-6 text-white text-center">
-        <h1 class="text-4xl md:text-6xl font-black mb-4 italic tracking-tighter">Impacto Caratinga</h1>
-        <p class="text-xl text-blue-100 max-w-2xl mx-auto font-medium">Fortalecendo o comércio local através da tecnologia.</p>
-    </section>
-    <main class="max-w-6xl mx-auto px-6 py-20">
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- New Businesses -->
-            <div class="bg-white p-8 rounded-3xl shadow-lg border border-slate-100 flex flex-col justify-between">
-                <div><h3 class="text-2xl font-bold mb-2">Metta Engenharia</h3><p class="text-slate-500 text-sm mb-6">Engenharia e Topografia de precisão.</p></div>
-                <div class="space-y-3"><a href="metta/index.html" class="block text-center bg-blue-600 text-white py-3 rounded-xl font-bold">Ver Site</a><a href="metta/proposta.html" class="block text-center bg-slate-100 text-slate-700 py-3 rounded-xl font-bold">Ver Proposta</a></div>
+<body class="antialiased selection:bg-accent-500 selection:text-white">
+    
+    <!-- Hero Section -->
+    <div class="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-hero-glow">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')] opacity-[0.03] bg-cover bg-center mix-blend-screen"></div>
+        
+        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto pt-20 pb-12">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 animate-fade-in-up">
+                <i data-lucide="map-pin" class="w-4 h-4 text-accent-400"></i>
+                <span class="text-sm font-medium text-brand-400 tracking-wide">Caratinga, MG</span>
             </div>
-            <div class="bg-white p-8 rounded-3xl shadow-lg border border-slate-100 flex flex-col justify-between">
-                <div><h3 class="text-2xl font-bold mb-2">Bloco Mais</h3><p class="text-slate-500 text-sm mb-6">Materiais do básico ao acabamento.</p></div>
-                <div class="space-y-3"><a href="blocomais/index.html" class="block text-center bg-blue-600 text-white py-3 rounded-xl font-bold">Ver Site</a><a href="blocomais/proposta.html" class="block text-center bg-slate-100 text-slate-700 py-3 rounded-xl font-bold">Ver Proposta</a></div>
-            </div>
-            <div class="bg-white p-8 rounded-3xl shadow-lg border border-slate-100 flex flex-col justify-between">
-                <div><h3 class="text-2xl font-bold mb-2">Solução Contabilidade</h3><p class="text-slate-500 text-sm mb-6">Inteligência contábil para sua empresa.</p></div>
-                <div class="space-y-3"><a href="solucao/index.html" class="block text-center bg-blue-600 text-white py-3 rounded-xl font-bold">Ver Site</a><a href="solucao/proposta.html" class="block text-center bg-slate-100 text-slate-700 py-3 rounded-xl font-bold">Ver Proposta</a></div>
-            </div>
-            <div class="bg-white p-8 rounded-3xl shadow-lg border border-slate-100 flex flex-col justify-between">
-                <div><h3 class="text-2xl font-bold mb-2">Mecânica Frederico</h3><p class="text-slate-500 text-sm mb-6">Confiança e tecnologia automotiva.</p></div>
-                <div class="space-y-3"><a href="frederico/index.html" class="block text-center bg-blue-600 text-white py-3 rounded-xl font-bold">Ver Site</a><a href="frederico/proposta.html" class="block text-center bg-slate-100 text-slate-700 py-3 rounded-xl font-bold">Ver Proposta</a></div>
-            </div>
-            <div class="bg-white p-8 rounded-3xl shadow-lg border border-slate-100 flex flex-col justify-between">
-                <div><h3 class="text-2xl font-bold mb-2">Estacionamento Caratinga</h3><p class="text-slate-500 text-sm mb-6">Segurança e comodidade no centro.</p></div>
-                <div class="space-y-3"><a href="estacionamento-caratinga/index.html" class="block text-center bg-blue-600 text-white py-3 rounded-xl font-bold">Ver Site</a><a href="estacionamento-caratinga/proposta.html" class="block text-center bg-slate-100 text-slate-700 py-3 rounded-xl font-bold">Ver Proposta</a></div>
-            </div>
-            <!-- Original Businesses -->
-            <div class="bg-white p-8 rounded-3xl shadow-lg border border-slate-100 flex flex-col justify-between opacity-80">
-                <div><h3 class="text-2xl font-bold mb-2">Vidraçaria Caratinga</h3><p class="text-slate-500 text-sm mb-6">Boxes e espelhos sob medida.</p></div>
-                <div class="space-y-3"><a href="vidracaria-caratinga/index.html" class="block text-center bg-blue-600 text-white py-3 rounded-xl font-bold">Ver Site</a><a href="vidracaria-caratinga/proposta.html" class="block text-center bg-slate-100 text-slate-700 py-3 rounded-xl font-bold">Ver Proposta</a></div>
-            </div>
-            <div class="bg-white p-8 rounded-3xl shadow-lg border border-slate-100 flex flex-col justify-between opacity-80">
-                <div><h3 class="text-2xl font-bold mb-2">Claudio Sapateiro</h3><p class="text-slate-500 text-sm mb-6">Mestre artesão em couro.</p></div>
-                <div class="space-y-3"><a href="claudio-sapateiro/index.html" class="block text-center bg-blue-600 text-white py-3 rounded-xl font-bold">Ver Site</a><a href="claudio-sapateiro/proposta.html" class="block text-center bg-slate-100 text-slate-700 py-3 rounded-xl font-bold">Ver Proposta</a></div>
-            </div>
-            <div class="bg-white p-8 rounded-3xl shadow-lg border border-slate-100 flex flex-col justify-between opacity-80">
-                <div><h3 class="text-2xl font-bold mb-2">Vidraçaria Sousa</h3><p class="text-slate-500 text-sm mb-6">Compromisso e qualidade.</p></div>
-                <div class="space-y-3"><a href="vidracaria-sousa/index.html" class="block text-center bg-blue-600 text-white py-3 rounded-xl font-bold">Ver Site</a><a href="vidracaria-sousa/proposta.html" class="block text-center bg-slate-100 text-slate-700 py-3 rounded-xl font-bold">Ver Proposta</a></div>
-            </div>
-            <div class="bg-white p-8 rounded-3xl shadow-lg border border-slate-100 flex flex-col justify-between opacity-80">
-                <div><h3 class="text-2xl font-bold mb-2">Só Vidros</h3><p class="text-slate-500 text-sm mb-6">Tecnologia e precisão.</p></div>
-                <div class="space-y-3"><a href="so-vidros/index.html" class="block text-center bg-blue-600 text-white py-3 rounded-xl font-bold">Ver Site</a><a href="so-vidros/proposta.html" class="block text-center bg-slate-100 text-slate-700 py-3 rounded-xl font-bold">Ver Proposta</a></div>
-            </div>
-            <div class="bg-white p-8 rounded-3xl shadow-lg border border-slate-100 flex flex-col justify-between opacity-80">
-                <div><h3 class="text-2xl font-bold mb-2">Limpeza Pro</h3><p class="text-slate-500 text-sm mb-6">Especialista em estofados.</p></div>
-                <div class="space-y-3"><a href="limpeza-pro/index.html" class="block text-center bg-blue-600 text-white py-3 rounded-xl font-bold">Ver Site</a><a href="limpeza-pro/proposta.html" class="block text-center bg-slate-100 text-slate-700 py-3 rounded-xl font-bold">Ver Proposta</a></div>
+            
+            <h1 class="text-5xl md:text-7xl font-heading font-black mb-6 tracking-tight text-gradient">
+                Impacto Digital
+            </h1>
+            
+            <p class="text-lg md:text-xl text-brand-400 font-sans max-w-2xl mx-auto leading-relaxed mb-10">
+                Elevando negócios locais ao padrão ouro de posicionamento digital. Domine o Google My Business e capture a demanda da sua cidade.
+            </p>
+        </div>
+    </div>
+
+    <!-- Hub Grid Section -->
+    <main class="max-w-7xl mx-auto px-6 pb-32">
+        <div class="flex items-center justify-between mb-12">
+            <h2 class="text-3xl font-heading font-bold text-white flex items-center gap-3">
+                <i data-lucide="briefcase" class="w-6 h-6 text-accent-500"></i>
+                Hub de Negócios
+            </h2>
+            <div class="text-sm text-brand-400 border border-white/10 px-4 py-2 rounded-full bg-white/5">
+                10 Empresas Selecionadas
             </div>
         </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 hub-grid">
+            
+            <!-- Card 1 -->
+            <div class="glass-card p-8 rounded-3xl flex flex-col justify-between h-full opacity-0 translate-y-8">
+                <div class="mb-8">
+                    <div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-6 border border-white/10">
+                        <i data-lucide="compass" class="w-6 h-6 text-accent-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold mb-3 text-white">Metta Engenharia</h3>
+                    <p class="text-brand-400 text-sm leading-relaxed">Engenharia e Topografia de alta precisão técnica e consultoria avançada.</p>
+                </div>
+                <div class="flex gap-3 mt-auto">
+                    <a href="metta/index.html" class="button-primary flex-1 text-center py-3 rounded-xl font-medium text-sm text-white">Visão do Site</a>
+                    <a href="metta/proposta.html" class="button-secondary flex-1 text-center py-3 rounded-xl font-medium text-sm text-white">Proposta GMB</a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="glass-card p-8 rounded-3xl flex flex-col justify-between h-full opacity-0 translate-y-8">
+                <div class="mb-8">
+                    <div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-6 border border-white/10">
+                        <i data-lucide="hard-hat" class="w-6 h-6 text-accent-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold mb-3 text-white">Bloco Mais</h3>
+                    <p class="text-brand-400 text-sm leading-relaxed">Materiais de construção com logística inteligente, do básico ao acabamento.</p>
+                </div>
+                <div class="flex gap-3 mt-auto">
+                    <a href="blocomais/index.html" class="button-primary flex-1 text-center py-3 rounded-xl font-medium text-sm text-white">Visão do Site</a>
+                    <a href="blocomais/proposta.html" class="button-secondary flex-1 text-center py-3 rounded-xl font-medium text-sm text-white">Proposta GMB</a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="glass-card p-8 rounded-3xl flex flex-col justify-between h-full opacity-0 translate-y-8">
+                <div class="mb-8">
+                    <div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-6 border border-white/10">
+                        <i data-lucide="pie-chart" class="w-6 h-6 text-accent-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold mb-3 text-white">Solução Contabilidade</h3>
+                    <p class="text-brand-400 text-sm leading-relaxed">Inteligência contábil, consultoria estratégica e planejamento tributário.</p>
+                </div>
+                <div class="flex gap-3 mt-auto">
+                    <a href="solucao/index.html" class="button-primary flex-1 text-center py-3 rounded-xl font-medium text-sm text-white">Visão do Site</a>
+                    <a href="solucao/proposta.html" class="button-secondary flex-1 text-center py-3 rounded-xl font-medium text-sm text-white">Proposta GMB</a>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="glass-card p-8 rounded-3xl flex flex-col justify-between h-full opacity-0 translate-y-8">
+                <div class="mb-8">
+                    <div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-6 border border-white/10">
+                        <i data-lucide="wrench" class="w-6 h-6 text-accent-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold mb-3 text-white">Mecânica Frederico</h3>
+                    <p class="text-brand-400 text-sm leading-relaxed">Confiança automotiva e tecnologia avançada para diagnóstico.</p>
+                </div>
+                <div class="flex gap-3 mt-auto">
+                    <a href="frederico/index.html" class="button-primary flex-1 text-center py-3 rounded-xl font-medium text-sm text-white">Visão do Site</a>
+                    <a href="frederico/proposta.html" class="button-secondary flex-1 text-center py-3 rounded-xl font-medium text-sm text-white">Proposta GMB</a>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="glass-card p-8 rounded-3xl flex flex-col justify-between h-full opacity-0 translate-y-8">
+                <div class="mb-8">
+                    <div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-6 border border-white/10">
+                        <i data-lucide="car-front" class="w-6 h-6 text-accent-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold mb-3 text-white">Estacionamento Caratinga</h3>
+                    <p class="text-brand-400 text-sm leading-relaxed">Segurança, monitoramento 24h e máxima comodidade no centro da cidade.</p>
+                </div>
+                <div class="flex gap-3 mt-auto">
+                    <a href="estacionamento-caratinga/index.html" class="button-primary flex-1 text-center py-3 rounded-xl font-medium text-sm text-white">Visão do Site</a>
+                    <a href="estacionamento-caratinga/proposta.html" class="button-secondary flex-1 text-center py-3 rounded-xl font-medium text-sm text-white">Proposta GMB</a>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="glass-card p-8 rounded-3xl flex flex-col justify-between h-full opacity-0 translate-y-8">
+                <div class="mb-8">
+                    <div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-6 border border-white/10">
+                        <i data-lucide="layout-grid" class="w-6 h-6 text-accent-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold mb-3 text-white">Vidraçaria Caratinga</h3>
+                    <p class="text-brand-400 text-sm leading-relaxed">Design em vidro, boxes e espelhos sob medida com acabamento premium.</p>
+                </div>
+                <div class="flex gap-3 mt-auto">
+                    <a href="vidracaria-caratinga/index.html" class="button-primary flex-1 text-center py-3 rounded-xl font-medium text-sm text-white">Visão do Site</a>
+                    <a href="vidracaria-caratinga/proposta.html" class="button-secondary flex-1 text-center py-3 rounded-xl font-medium text-sm text-white">Proposta GMB</a>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="glass-card p-8 rounded-3xl flex flex-col justify-between h-full opacity-0 translate-y-8">
+                <div class="mb-8">
+                    <div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-6 border border-white/10">
+                        <i data-lucide="scissors" class="w-6 h-6 text-accent-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold mb-3 text-white">Claudio Sapateiro</h3>
+                    <p class="text-brand-400 text-sm leading-relaxed">Mestre artesão. Restauração e trabalho em couro com excelência.</p>
+                </div>
+                <div class="flex gap-3 mt-auto">
+                    <a href="claudio-sapateiro/index.html" class="button-primary flex-1 text-center py-3 rounded-xl font-medium text-sm text-white">Visão do Site</a>
+                    <a href="claudio-sapateiro/proposta.html" class="button-secondary flex-1 text-center py-3 rounded-xl font-medium text-sm text-white">Proposta GMB</a>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="glass-card p-8 rounded-3xl flex flex-col justify-between h-full opacity-0 translate-y-8">
+                <div class="mb-8">
+                    <div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-6 border border-white/10">
+                        <i data-lucide="box" class="w-6 h-6 text-accent-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold mb-3 text-white">Vidraçaria Sousa</h3>
+                    <p class="text-brand-400 text-sm leading-relaxed">Compromisso, qualidade e agilidade em instalações de vidro.</p>
+                </div>
+                <div class="flex gap-3 mt-auto">
+                    <a href="vidracaria-sousa/index.html" class="button-primary flex-1 text-center py-3 rounded-xl font-medium text-sm text-white">Visão do Site</a>
+                    <a href="vidracaria-sousa/proposta.html" class="button-secondary flex-1 text-center py-3 rounded-xl font-medium text-sm text-white">Proposta GMB</a>
+                </div>
+            </div>
+
+            <!-- Card 9 -->
+            <div class="glass-card p-8 rounded-3xl flex flex-col justify-between h-full opacity-0 translate-y-8">
+                <div class="mb-8">
+                    <div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-6 border border-white/10">
+                        <i data-lucide="layers" class="w-6 h-6 text-accent-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold mb-3 text-white">Só Vidros</h3>
+                    <p class="text-brand-400 text-sm leading-relaxed">Tecnologia, precisão e design minimalista em soluções de envidraçamento.</p>
+                </div>
+                <div class="flex gap-3 mt-auto">
+                    <a href="so-vidros/index.html" class="button-primary flex-1 text-center py-3 rounded-xl font-medium text-sm text-white">Visão do Site</a>
+                    <a href="so-vidros/proposta.html" class="button-secondary flex-1 text-center py-3 rounded-xl font-medium text-sm text-white">Proposta GMB</a>
+                </div>
+            </div>
+
+            <!-- Card 10 -->
+            <div class="glass-card p-8 rounded-3xl flex flex-col justify-between h-full opacity-0 translate-y-8">
+                <div class="mb-8">
+                    <div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-6 border border-white/10">
+                        <i data-lucide="sparkles" class="w-6 h-6 text-accent-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold mb-3 text-white">Limpeza Pro</h3>
+                    <p class="text-brand-400 text-sm leading-relaxed">Especialistas em higienização profunda de estofados e ambientes.</p>
+                </div>
+                <div class="flex gap-3 mt-auto">
+                    <a href="limpeza-pro/index.html" class="button-primary flex-1 text-center py-3 rounded-xl font-medium text-sm text-white">Visão do Site</a>
+                    <a href="limpeza-pro/proposta.html" class="button-secondary flex-1 text-center py-3 rounded-xl font-medium text-sm text-white">Proposta GMB</a>
+                </div>
+            </div>
+
+        </div>
     </main>
-    <footer class="py-12 bg-slate-900 text-white text-center font-bold">theflowyway & Accomplish Agent</footer>
+
+    <footer class="py-8 border-t border-white/5 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+            <p class="text-brand-400 text-sm font-medium">© 2026 Sovereign Architect</p>
+            <div class="flex items-center gap-2 mt-4 md:mt-0">
+                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                <span class="text-xs text-brand-400 font-medium tracking-wide uppercase">Operação Ativa</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // GSAP Animations
+        document.addEventListener("DOMContentLoaded", (event) => {
+            gsap.to(".hub-grid > div", {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                stagger: 0.1,
+                ease: "power3.out",
+                delay: 0.2
+            });
+        });
+    </script>
 </body>
 </html>

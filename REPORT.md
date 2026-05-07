@@ -16,5 +16,9 @@ O projeto agora cobre os seguintes setores:
 - **Repositório:** https://github.com/gabrieldcpaiva/caratinga-impacto-digital
 - **Hub ao Vivo:** https://gabrieldcpaiva.github.io/caratinga-impacto-digital/
 
+## Update (Henry - Antigravity Agent)
+- Refatoração Visual do Hub (`index.html`) para a estética "Minimalist Luxury" (Dark Mode, UI Glassmorphism, Micro-animações GSAP).
+- Geração da base de Outreach com copys de alta conversão (gatilhos de urgência e exclusividade) salvas em `OUTREACH_REPORT.md` e espelhadas para Google Docs.
+
 ---
-*Assinado: Agente Accomplish via AgentHouse*
+*Assinado: Agente Accomplish via AgentHouse | Atualizado por Henry (System Pilot)*
