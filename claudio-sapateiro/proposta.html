@@ -1,18 +1,103 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proposta Comercial - Claudio Sapateiro</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Proposta de Valor | Claudio Sapateiro</title>
+    <link rel="stylesheet" href="../gold-mold/css/styles.css">
+    <style>
+        .audit-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .status-tag {
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 100px;
+        }
+        .status-critical { background: #fee2e2; color: #ef4444; }
+        .status-fixable { background: #fef3c7; color: #f59e0b; }
+    </style>
 </head>
-<body class="bg-stone-50 text-stone-900 font-serif p-8 md:p-16">
-    <div class="max-w-3xl mx-auto bg-white p-12 shadow-xl border-t-8 border-[#4A2C2A]">
-        <h1 class="text-4xl font-black mb-4">Proposta: Resgate da Arte Tradicional</h1>
-        <p class="text-stone-500 mb-12">Para: Claudio Sapateiro</p>
-        <h2 class="text-2xl font-bold mb-4 text-[#4A2C2A]">O Problema</h2>
-        <p class="mb-8 leading-relaxed">Você é um mestre artesão, mas o Google ainda te vê apenas como um "negócio local".</p>
-        <div class="bg-stone-100 p-6 rounded-lg text-center"><p class="text-sm uppercase tracking-widest text-stone-500 mb-2">Investimento Estimado</p><p class="text-4xl font-bold text-[#4A2C2A]">R$ 800,00</p></div>
-    </div>
+<body style="background: #fff; padding-bottom: 0;">
+    <main class="container" style="padding-top: 60px; padding-bottom: 100px;">
+        <!-- Header -->
+        <header style="text-align: center; margin-bottom: 60px;">
+            <p class="sans" style="font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-clay); margin-bottom: 16px; font-weight: 800;">Dossiê de Resgate da Tradição</p>
+            <h1 style="font-size: 48px; line-height: 1.1; margin-bottom: 16px;">O Futuro da <br><span class="italic-garamond">Artesania</span></h1>
+            <p class="sans" style="font-size: 14px; opacity: 0.6;">Preparado exclusivamente para Claudio Sapateiro</p>
+        </header>
+
+        <!-- The Audit -->
+        <section class="card" style="margin-bottom: 40px; box-shadow: none; border-color: var(--primary-moss);">
+            <h2 class="sans" style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px; color: var(--primary-moss);">Mapeamento de Presença</h2>
+            
+            <div class="audit-item">
+                <span style="font-size: 14px;">Encontrabilidade Local (Google)</span>
+                <span class="status-tag status-critical">Cego</span>
+            </div>
+            <div class="audit-item">
+                <span style="font-size: 14px;">Facilidade de Contato Digital</span>
+                <span class="status-tag status-critical">Difícil</span>
+            </div>
+            <div class="audit-item">
+                <span style="font-size: 14px;">Imagem de Autoridade Visual</span>
+                <span class="status-tag status-fixable">Oculta</span>
+            </div>
+
+            <div style="margin-top: 32px; padding: 20px; background: var(--bg-cream); border-radius: var(--radius-md);">
+                <p style="font-size: 14px; font-weight: 500;">
+                    <span class="text-accent">●</span> Estimamos que <span class="text-accent">45 pessoas</span> por mês em Caratinga buscam "conserto de sapato" e acabam em concorrentes distantes porque sua oficina não aparece no celular delas.
+                </p>
+            </div>
+        </section>
+
+        <!-- The Solution -->
+        <section style="padding: 40px 0;">
+            <h2 style="font-size: 32px; margin-bottom: 24px;">Nossa <span class="italic-garamond">Proposta</span></h2>
+            <p style="font-size: 15px; color: #555; margin-bottom: 32px;">
+                Fazer com que a técnica mestre do Claudio seja a primeira opção de toda a cidade.
+            </p>
+
+            <div style="display: grid; gap: 16px;">
+                <div class="card" style="padding: 24px;">
+                    <h3 class="sans" style="font-size: 14px; text-transform: uppercase; margin-bottom: 8px;">01. Oficina no Mapa</h3>
+                    <p style="font-size: 13px; opacity: 0.7;">Configuração profissional do Google Meu Negócio para que qualquer busca por 'sapateiro' leve até você.</p>
+                </div>
+                <div class="card" style="padding: 24px;">
+                    <h3 class="sans" style="font-size: 14px; text-transform: uppercase; margin-bottom: 8px;">02. Cartão de Visitas Digital</h3>
+                    <p style="font-size: 13px; opacity: 0.7;">Uma página leve, elegante e focada em converter o clique em um pedido de orçamento via WhatsApp.</p>
+                </div>
+                <div class="card" style="padding: 24px;">
+                    <h3 class="sans" style="font-size: 14px; text-transform: uppercase; margin-bottom: 8px;">03. Conexão Instantânea</h3>
+                    <p style="font-size: 13px; opacity: 0.7;">Botões diretos para que o cliente envie a foto do calçado e receba o orçamento sem sair de casa.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Investment -->
+        <section style="background: var(--bg-cream); border-radius: var(--radius-lg); padding: 48px 32px; text-align: center;">
+            <p class="sans" style="font-size: 10px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px;">Plano de Crescimento Artesanal</p>
+            <h2 style="font-size: 42px; margin-bottom: 32px;">Seu Próximo <span class="italic-garamond">Passo</span></h2>
+            
+            <div style="background: white; padding: 32px; border-radius: var(--radius-md); margin-bottom: 32px;">
+                <p style="font-size: 14px; opacity: 0.6; margin-bottom: 8px;">Implementação Acelerada</p>
+                <p style="font-size: 24px; font-weight: 700; color: var(--primary-moss);">Condição Acessível</p>
+                <p class="sans" style="font-size: 9px; text-transform: uppercase; margin-top: 16px; opacity: 0.5;">*Incluso suporte e acompanhamento</p>
+            </div>
+
+            <a href="https://wa.me/553333211516" class="btn-primary btn-accent">Garantir Minha Vaga</a>
+            <p style="font-size: 12px; margin-top: 24px; opacity: 0.6;">Apenas uma oficina de artesania será atendida neste ciclo em Caratinga.</p>
+        </section>
+    </main>
+
+    <footer style="background: var(--text-charcoal); color: white; padding: 40px 0; text-align: center;">
+        <p class="sans" style="font-size: 10px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.5;">Caratinga Impacto Digital</p>
+    </footer>
 </body>
 </html>

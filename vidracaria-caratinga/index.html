@@ -1,54 +1,123 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vidraçaria Caratinga - Qualidade e Confiança</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
-        .glass-effect { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
-    </style>
+    <title>Vidraçaria Caratinga | A Grife do Design em Vidro</title>
+    <link rel="stylesheet" href="../gold-mold/css/styles.css">
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans">
-    <header class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-2"><i class="fas fa-gem text-blue-600 text-2xl"></i><span class="text-xl font-bold tracking-tight">Vidraçaria <span class="text-blue-600">Caratinga</span></span></div>
-            <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-600"><a href="#servicos" class="hover:text-blue-600 transition">Serviços</a><a href="#sobre" class="hover:text-blue-600 transition">Sobre Nós</a><a href="#contato" class="hover:text-blue-600 transition">Contato</a></nav>
-            <a href="https://wa.me/5533984232513" class="bg-green-500 hover:bg-green-600 text-white px-6 py-2.5 rounded-full font-semibold transition flex items-center space-x-2"><i class="fab fa-whatsapp"></i><span>Orçamento Grátis</span></a>
+<body>
+    <!-- Navbar -->
+    <nav class="container" style="position: fixed; top: 24px; left: 50%; transform: translateX(-50%); z-index: 100;">
+        <div style="background: var(--glass-bg); backdrop-filter: blur(20px); padding: 12px 24px; border-radius: 100px; border: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <span class="sans" style="font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 12px;">V. Caratinga</span>
+            <a href="https://wa.me/553333211516" class="sans" style="font-size: 10px; font-weight: 700; text-decoration: none; color: var(--primary-moss); text-transform: uppercase; letter-spacing: 1px;">Solicitar Orçamento</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header style="height: 90dvh; display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 80px; position: relative; overflow: hidden; background: url('../gold-mold/hero-bg.png') center/cover no-repeat;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(242, 240, 233, 0.4), var(--bg-cream));"></div>
+        
+        <div class="container" style="position: relative; z-index: 10;">
+            <p class="sans animate-in" style="font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 12px; margin-bottom: 16px; color: var(--primary-moss);">Exclusividade em Cristal</p>
+            <h1 class="animate-in" style="font-size: 56px; line-height: 1; font-weight: 400; margin-bottom: 24px;">
+                A grife do design em vidro em <br>
+                <span class="italic-garamond" style="font-size: 72px; color: var(--accent-clay);">Caratinga.</span>
+            </h1>
+            <p class="sans animate-in" style="max-width: 400px; color: var(--text-charcoal); opacity: 0.8; margin-bottom: 40px; font-weight: 300;">
+                Onde a transparência do cristal encontra a sofisticação do design exclusivo para sua obra.
+            </p>
+            <a href="#calculadora" class="btn-primary animate-in" style="width: auto; padding: 18px 48px;">Analisar Demanda</a>
         </div>
     </header>
-    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden hero-gradient text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
-                <div>
-                    <h1 class="text-4xl lg:text-6xl font-extrabold leading-tight mb-6">Transparência e <span class="text-blue-400">Excelência</span> para seu ambiente.</h1>
-                    <p class="text-lg text-slate-300 mb-8 max-w-lg">Box para banheiro, espelhos sob medida, janelas e portas de vidro temperado. Transformamos sua casa com segurança e o melhor acabamento de Caratinga.</p>
-                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <a href="#servicos" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold transition text-center">Ver Nossos Serviços</a>
+
+    <main>
+        <!-- The Gap / Reverse FOMO -->
+        <section class="container">
+            <div class="card" style="text-align: center;">
+                <h2 style="font-size: 32px; margin-bottom: 16px;">Além da Transparência</h2>
+                <p style="color: #666; margin-bottom: 32px; font-size: 15px;">
+                    Enquanto outros vendem apenas vidro, nós entregamos autoridade visual. Em Caratinga, quem busca por projetos de alto padrão não aceita o comum. Se sua vidraçaria não parece uma grife, você está perdendo o <span class="italic-garamond">cliente premium</span>.
+                </p>
+                <div class="divider"></div>
+                <div style="display: grid; grid-template-cols: 1fr; gap: 24px; text-align: left;">
+                    <div style="display: flex; gap: 16px; align-items: flex-start;">
+                        <span style="background: var(--primary-moss); color: white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 10px; flex-shrink: 0; margin-top: 4px;">✓</span>
+                        <p style="font-size: 14px;"><strong class="sans" style="font-size: 12px; text-transform: uppercase;">Projetos de Luxo:</strong> Esquadrias e vidros que valorizam seu imóvel instantaneamente.</p>
+                    </div>
+                    <div style="display: flex; gap: 16px; align-items: flex-start;">
+                        <span style="background: var(--primary-moss); color: white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 10px; flex-shrink: 0; margin-top: 4px;">✓</span>
+                        <p style="font-size: 14px;"><strong class="sans" style="font-size: 12px; text-transform: uppercase;">Domínio Geográfico:</strong> Seja a referência absoluta quando o assunto é arquitetura em vidro.</p>
                     </div>
                 </div>
-                <div class="mt-12 lg:mt-0 relative"><div class="glass-effect p-4 rounded-2xl"><img src="https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?auto=format&fit=crop&q=80&w=800" class="rounded-xl shadow-2xl"></div></div>
             </div>
-        </div>
-    </section>
-    <section id="servicos" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16"><h2 class="text-3xl font-bold text-slate-900 mb-4">Nossas Especialidades</h2><p class="text-slate-600 max-w-2xl mx-auto">Trabalhamos com os melhores materiais do mercado para garantir durabilidade e design sofisticado.</p></div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-8 rounded-2xl border border-slate-100 hover:border-blue-200 hover:shadow-xl transition group"><div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition"><i class="fas fa-bath text-xl"></i></div><h3 class="text-xl font-bold mb-3 text-slate-900">Box para Banheiro</h3><p class="text-slate-600">Vidros temperados de alta resistência com diversos tipos de acabamento para seu conforto e segurança.</p></div>
-                <div class="p-8 rounded-2xl border border-slate-100 hover:border-blue-200 hover:shadow-xl transition group"><div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition"><i class="fas fa-expand text-xl"></i></div><h3 class="text-xl font-bold mb-3 text-slate-900">Espelhos Sob Medida</h3><p class="text-slate-600">Espelhos bisotados e lapidados para salas, quartos e banheiros. Amplie seus ambientes com elegância.</p></div>
-                <div class="p-8 rounded-2xl border border-slate-100 hover:border-blue-200 hover:shadow-xl transition group"><div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition"><i class="fas fa-door-open text-xl"></i></div><h3 class="text-xl font-bold mb-3 text-slate-900">Portas e Janelas</h3><p class="text-slate-600">Projetos residenciais e comerciais em vidro temperado e laminado. Máxima vedação e isolamento.</p></div>
+        </section>
+
+        <!-- Calculator Section -->
+        <section id="calculadora" style="background: white; border-radius: 60px 60px 0 0; margin-top: 40px; padding: 100px 0;">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 48px;">
+                    <h2 style="font-size: 42px; margin-bottom: 8px;">Calculadora de <br><span class="italic-garamond text-accent">Demanda Invisível</span></h2>
+                    <p class="sans" style="font-size: 11px; text-transform: uppercase; letter-spacing: 2px; opacity: 0.6;">O custo real de não ser a primeira escolha</p>
+                </div>
+
+                <div class="card" style="background: var(--bg-cream); border: none;">
+                    <label class="sans" style="font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 12px;">Valor Médio do Seu Projeto (R$)</label>
+                    <input type="number" id="ticket" value="2000" placeholder="Ex: 2000" style="margin-bottom: 24px;">
+                    
+                    <button onclick="simulateDemand()" class="btn-primary btn-accent">Calcular Oportunidade</button>
+
+                    <div id="demand-result" style="display: none; margin-top: 40px; text-align: center; animation: fadeInBlur 0.8s ease forwards;">
+                        <p class="sans" style="font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--primary-moss); margin-bottom: 8px;">Resultado da Análise</p>
+                        <h3 id="lost-revenue" style="font-size: 48px; color: var(--text-charcoal); margin-bottom: 12px;">R$ 0,00</h3>
+                        <p style="font-size: 14px; color: #555; max-width: 300px; margin: 0 auto;">
+                            Este é o faturamento estimado que sua vidraçaria deixa de capturar <span class="italic-garamond">mensalmente</span> por não dominar as buscas de alto padrão em Caratinga.
+                        </p>
+                        <div class="divider"></div>
+                        <p style="font-size: 13px; font-weight: 600;">Vamos recuperar esse mercado?</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
-    <footer id="contato" class="bg-slate-900 text-white py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold mb-8">Pronto para transformar seu projeto?</h2>
-            <p class="text-slate-400 mb-12 max-w-xl mx-auto">Entre em contato hoje mesmo e receba uma visita técnica para medição sem compromisso.</p>
-            <div class="flex flex-col items-center space-y-6"><a href="https://wa.me/5533984232513" class="bg-green-500 hover:bg-green-600 px-10 py-4 rounded-full text-xl font-bold transition"><i class="fab fa-whatsapp mr-2"></i> Chamar no WhatsApp</a><p class="text-slate-500">Endereço: R. Princesa Isabel, 386 - Caratinga, MG</p></div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="container" style="text-align: center; padding-bottom: 120px;">
+            <h2 style="font-size: 36px; margin-bottom: 24px;">Pronto para ser a <span class="italic-garamond">Referência?</span></h2>
+            <p style="margin-bottom: 48px; opacity: 0.7;">
+                Não vendemos vidro. Blindamos sua posição como líder de mercado.
+            </p>
+            <a href="https://wa.me/553333211516" class="btn-primary">Falar com Estrategista</a>
+        </section>
+    </main>
+
+    <footer style="background: var(--primary-moss); color: rgba(255,255,255,0.6); padding: 60px 0; border-radius: 40px 40px 0 0;">
+        <div class="container" style="text-align: center;">
+            <p class="sans" style="font-size: 10px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px;">
+                <span style="display: inline-block; width: 8px; height: 8px; background: #4CAF50; border-radius: 50%; margin-right: 8px; box-shadow: 0 0 10px #4CAF50;"></span>
+                Status: Sistema Operacional Ativo
+            </p>
+            <p style="font-size: 12px;">© 2024 Vidraçaria Caratinga. <br> Powered by Impacto Digital.</p>
         </div>
     </footer>
+
+    <script>
+        function simulateDemand() {
+            const ticket = document.getElementById('ticket').value;
+            const resultBox = document.getElementById('demand-result');
+            const revenueText = document.getElementById('lost-revenue');
+            
+            if(ticket) {
+                // Simulation logic: High ticket glass projects are fewer but more valuable.
+                const lostClients = 6; 
+                const lostMoney = ticket * lostClients;
+                
+                revenueText.innerText = `R$ ${lostMoney.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
+                resultBox.style.display = 'block';
+                
+                resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+    </script>
 </body>
 </html>
