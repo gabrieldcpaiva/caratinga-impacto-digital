@@ -1,0 +1,3 @@
+## 2026-05-21 - Calculator Accessibility Enhancement
+**Learning:** Dynamic calculators updating their results via JavaScript (like the ) require `aria-live="polite"` so screen readers automatically announce the new value without needing focus shifts. Also, extracting placeholders into explicit `<label for="...">` fields improves context retention and expands the clickable target area.
+**Action:** Whenever building or refactoring a JS-driven component that displays dynamic values (like a calculator or price estimator), ensure the output container uses `aria-live` and the inputs have explicit labels associated via the `id` attribute.
