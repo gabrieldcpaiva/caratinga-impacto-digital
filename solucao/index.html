@@ -42,9 +42,10 @@
             
             <div class="space-y-6">
                 <label for="revenue" class="sr-only">Faturamento Mensal (R$)</label>
-                <input type="number" id="revenue" placeholder="Faturamento Mensal (R$)" class="w-full p-4 rounded-sm text-sm">
+                <input type="number" id="revenue" placeholder="Faturamento Mensal (R$)" class="w-full p-4 rounded-sm text-sm" aria-describedby="revenue-error">
+                <p id="revenue-error" class="hidden text-red-500 text-xs mt-1" aria-live="polite">Por favor, insira um valor válido para o faturamento.</p>
                 <button onclick="calcTax()" class="w-full btn-minimal p-4 text-xs uppercase tracking-widest font-bold">Simular Resultado</button>
-                <div id="result-box" class="hidden text-center py-6 border-t border-white/10">
+                <div id="result-box" class="hidden text-center py-6 border-t border-white/10" aria-live="polite">
                     <p id="taxResult" class="text-3xl font-light serif"></p>
                     <p class="text-zinc-500 text-[10px] uppercase tracking-widest mt-2">Saldo Líquido Estimado</p>
                 </div>
@@ -68,13 +69,22 @@
 
     <script>
         function calcTax() {
-            const rev = document.getElementById('revenue').value;
+            const revInput = document.getElementById('revenue');
+            const rev = revInput.value;
             const resBox = document.getElementById('result-box');
             const resText = document.getElementById('taxResult');
-            if(rev) {
+            const errorText = document.getElementById('revenue-error');
+
+            if(rev && rev > 0) {
+                errorText.classList.add('hidden');
+                revInput.classList.remove('border', 'border-red-500');
                 const liquid = rev - 75; // Average DAS
                 resText.innerText = `R$ ${liquid.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
                 resBox.classList.remove('hidden');
+            } else {
+                resBox.classList.add('hidden');
+                errorText.classList.remove('hidden');
+                revInput.classList.add('border', 'border-red-500');
             }
         }
     </script>

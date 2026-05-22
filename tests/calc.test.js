@@ -7,7 +7,17 @@ global.document = {
     _elements: {},
     getElementById: function(id) {
         if (!this._elements[id]) {
-            this._elements[id] = { value: '', innerText: '', classList: { remove: function(){} } };
+            this._elements[id] = {
+                value: '',
+                innerText: '',
+                classList: {
+                    remove: function(){},
+                    add: function(){},
+                    contains: function(){ return false; }
+                },
+                style: { display: '' },
+                scrollIntoView: function(){}
+            };
         }
         return this._elements[id];
     }
