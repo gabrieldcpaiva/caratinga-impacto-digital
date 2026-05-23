@@ -7,7 +7,16 @@ global.document = {
     _elements: {},
     getElementById: function(id) {
         if (!this._elements[id]) {
-            this._elements[id] = { value: '', innerText: '', classList: { remove: function(){} } };
+            this._elements[id] = {
+                value: '',
+                innerText: '',
+                classList: {
+                    classes: new Set(),
+                    add: function(cls) { this.classes.add(cls); },
+                    remove: function(cls) { this.classes.delete(cls); },
+                    contains: function(cls) { return this.classes.has(cls); }
+                }
+            };
         }
         return this._elements[id];
     }
