@@ -64,11 +64,12 @@
 
                 <div class="card" style="background: var(--bg-cream); border: none;">
                     <label for="ticket" class="sans" style="font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 12px;">Valor Médio por Projeto (R$)</label>
-                    <input type="number" id="ticket" placeholder="Ex: 5000" value="5000">
+                    <input type="number" id="ticket" placeholder="Ex: 5000" value="5000" aria-describedby="ticket-error">
+                    <div id="ticket-error" aria-live="polite" style="color: #d32f2f; font-size: 12px; margin-top: 8px; display: none;"></div>
                     
                     <button onclick="simulateDemand()" class="btn-primary btn-accent" style="margin-top: 24px;">Calcular Oportunidade</button>
 
-                    <div id="demand-result" style="display: none; margin-top: 40px; text-align: center; animation: fadeInBlur 0.8s ease forwards;">
+                    <div id="demand-result" aria-live="polite" style="display: none; margin-top: 40px; text-align: center; animation: fadeInBlur 0.8s ease forwards;">
                         <p class="sans" style="font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--primary-moss); margin-bottom: 8px;">Análise Metta</p>
                         <h3 id="lost-revenue" style="font-size: 48px; color: var(--text-charcoal); margin-bottom: 12px;">R$ 0,00</h3>
                         <p style="font-size: 14px; color: #555; max-width: 300px; margin: 0 auto;">
@@ -102,20 +103,31 @@
 
     <script>
         function simulateDemand() {
-            const ticket = document.getElementById('ticket').value;
+            const ticketInput = document.getElementById('ticket');
+            const ticket = ticketInput.value;
             const resultBox = document.getElementById('demand-result');
             const revenueText = document.getElementById('lost-revenue');
+            const errorBox = document.getElementById('ticket-error');
             
-            if(ticket) {
-                // Simulation logic: For Engineering, fewer searches but high ticket.
-                // Lost ~3 major projects/month.
-                const lostClients = 3; 
-                const lostMoney = ticket * lostClients;
-                
-                revenueText.innerText = `R$ ${lostMoney.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
-                resultBox.style.display = 'block';
-                resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            if (!ticket || isNaN(ticket) || Number(ticket) <= 0) {
+                errorBox.innerText = "Por favor, insira um valor válido maior que zero.";
+                errorBox.style.display = 'block';
+                resultBox.style.display = 'none';
+                ticketInput.focus();
+                return;
             }
+
+            errorBox.style.display = 'none';
+            errorBox.innerText = "";
+
+            // Simulation logic: For Engineering, fewer searches but high ticket.
+            // Lost ~3 major projects/month.
+            const lostClients = 3;
+            const lostMoney = Number(ticket) * lostClients;
+
+            revenueText.innerText = `R$ ${lostMoney.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
+            resultBox.style.display = 'block';
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
     </script>
 </body>
