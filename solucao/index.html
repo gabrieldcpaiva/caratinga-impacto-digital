@@ -42,9 +42,12 @@
             
             <div class="space-y-6">
                 <label for="revenue" class="sr-only">Faturamento Mensal (R$)</label>
-                <input type="number" id="revenue" placeholder="Faturamento Mensal (R$)" class="w-full p-4 rounded-sm text-sm">
+                <div class="space-y-1">
+                    <input type="number" id="revenue" placeholder="Faturamento Mensal (R$)" class="w-full p-4 rounded-sm text-sm" aria-describedby="revenue-error">
+                    <div id="revenue-error" class="text-red-500 text-xs min-h-[16px] text-left" aria-live="polite"></div>
+                </div>
                 <button onclick="calcTax()" class="w-full btn-minimal p-4 text-xs uppercase tracking-widest font-bold">Simular Resultado</button>
-                <div id="result-box" class="hidden text-center py-6 border-t border-white/10">
+                <div id="result-box" class="hidden text-center py-6 border-t border-white/10" aria-live="polite">
                     <p id="taxResult" class="text-3xl font-light serif"></p>
                     <p class="text-zinc-500 text-[10px] uppercase tracking-widest mt-2">Saldo Líquido Estimado</p>
                 </div>
@@ -71,11 +74,18 @@
             const rev = document.getElementById('revenue').value;
             const resBox = document.getElementById('result-box');
             const resText = document.getElementById('taxResult');
-            if(rev) {
-                const liquid = rev - 75; // Average DAS
-                resText.innerText = `R$ ${liquid.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
-                resBox.classList.remove('hidden');
+            const errorBox = document.getElementById('revenue-error');
+
+            if(!rev || isNaN(rev) || rev <= 0) {
+                errorBox.innerText = 'Por favor, insira um valor de faturamento válido.';
+                resBox.classList.add('hidden');
+                return;
             }
+
+            errorBox.innerText = '';
+            const liquid = rev - 75; // Average DAS
+            resText.innerText = `R$ ${liquid.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
+            resBox.classList.remove('hidden');
         }
     </script>
 </body>
