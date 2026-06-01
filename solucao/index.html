@@ -42,11 +42,16 @@
             
             <div class="space-y-6">
                 <label for="revenue" class="sr-only">Faturamento Mensal (R$)</label>
-                <input type="number" id="revenue" placeholder="Faturamento Mensal (R$)" class="w-full p-4 rounded-sm text-sm">
+                <input type="number" id="revenue" placeholder="Faturamento Mensal (R$)" class="w-full p-4 rounded-sm text-sm" aria-describedby="revenue-error">
+                <div aria-live="polite" class="min-h-[16px]">
+                    <span id="revenue-error" class="text-red-500 text-xs hidden"></span>
+                </div>
                 <button onclick="calcTax()" class="w-full btn-minimal p-4 text-xs uppercase tracking-widest font-bold">Simular Resultado</button>
-                <div id="result-box" class="hidden text-center py-6 border-t border-white/10">
-                    <p id="taxResult" class="text-3xl font-light serif"></p>
-                    <p class="text-zinc-500 text-[10px] uppercase tracking-widest mt-2">Saldo Líquido Estimado</p>
+                <div aria-live="polite">
+                    <div id="result-box" class="hidden text-center py-6 border-t border-white/10">
+                        <p id="taxResult" class="text-3xl font-light serif"></p>
+                        <p class="text-zinc-500 text-[10px] uppercase tracking-widest mt-2">Saldo Líquido Estimado</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -71,7 +76,14 @@
             const rev = document.getElementById('revenue').value;
             const resBox = document.getElementById('result-box');
             const resText = document.getElementById('taxResult');
-            if(rev) {
+            const errorText = document.getElementById('revenue-error');
+
+            if(!rev || isNaN(rev) || rev <= 0) {
+                errorText.innerText = "Por favor, insira um valor válido maior que zero.";
+                errorText.classList.remove('hidden');
+                resBox.classList.add('hidden');
+            } else {
+                errorText.classList.add('hidden');
                 const liquid = rev - 75; // Average DAS
                 resText.innerText = `R$ ${liquid.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
                 resBox.classList.remove('hidden');
