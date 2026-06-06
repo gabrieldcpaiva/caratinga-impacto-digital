@@ -42,9 +42,10 @@
             
             <div class="space-y-6">
                 <label for="revenue" class="sr-only">Faturamento Mensal (R$)</label>
-                <input type="number" id="revenue" placeholder="Faturamento Mensal (R$)" class="w-full p-4 rounded-sm text-sm">
+                <input type="number" id="revenue" aria-describedby="revenue-error" placeholder="Faturamento Mensal (R$)" class="w-full p-4 rounded-sm text-sm">
+                <span id="revenue-error" aria-live="polite" class="block text-red-500 text-xs min-h-[16px] text-left"></span>
                 <button onclick="calcTax()" class="w-full btn-minimal p-4 text-xs uppercase tracking-widest font-bold">Simular Resultado</button>
-                <div id="result-box" class="hidden text-center py-6 border-t border-white/10">
+                <div id="result-box" aria-live="polite" class="hidden text-center py-6 border-t border-white/10">
                     <p id="taxResult" class="text-3xl font-light serif"></p>
                     <p class="text-zinc-500 text-[10px] uppercase tracking-widest mt-2">Saldo Líquido Estimado</p>
                 </div>
@@ -68,14 +69,26 @@
 
     <script>
         function calcTax() {
-            const rev = document.getElementById('revenue').value;
+            const input = document.getElementById('revenue');
+            const rev = input.value;
+            const errorText = document.getElementById('revenue-error');
             const resBox = document.getElementById('result-box');
             const resText = document.getElementById('taxResult');
-            if(rev) {
-                const liquid = rev - 75; // Average DAS
-                resText.innerText = `R$ ${liquid.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
-                resBox.classList.remove('hidden');
+
+            // Clear previous state
+            errorText.innerText = '';
+            input.classList.remove('border-red-500', 'border');
+            resBox.classList.add('hidden');
+
+            if(!rev || isNaN(rev)) {
+                errorText.innerText = 'Por favor, insira o faturamento mensal.';
+                input.classList.add('border-red-500', 'border');
+                return;
             }
+
+            const liquid = rev - 75; // Average DAS
+            resText.innerText = `R$ ${liquid.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
+            resBox.classList.remove('hidden');
         }
     </script>
 </body>
