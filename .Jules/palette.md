@@ -1,4 +1,6 @@
-
 ## 2024-05-15 - Missing Label Form Associations
 **Learning:** Across the various landing pages in this repository, form inputs (such as the calculator inputs for 'ticket' or 'revenue') consistently lacked proper `for` attributes on their labels, which breaks screen reader accessibility by preventing the association between the label and the input field. Additionally, some inputs had no label at all.
 **Action:** Always verify that `<label>` elements have a `for` attribute that strictly matches the `id` of their corresponding `<input>`. If a visible label disrupts the design, use a visually hidden (screen-reader only) label (e.g., `class="sr-only"`) to ensure accessibility is not compromised.
+## 2026-06-08 - Inline Validation for Calculators
+**Learning:** When adding dynamic inline validation to calculators that update the UI instantly (e.g. solucao MEI calculator), it is important to use aria-live="polite" so screen readers announce errors without interrupting the user. Also, using aria-describedby directly linking the input to the error message div ensures the error context is associated with the active form field.
+**Action:** Always wrap error messages and dynamic result containers in aria-live="polite" and use aria-describedby for clear association.
