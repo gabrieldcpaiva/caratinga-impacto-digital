@@ -41,10 +41,15 @@
             </div>
             
             <div class="space-y-6">
-                <label for="revenue" class="sr-only">Faturamento Mensal (R$)</label>
-                <input type="number" id="revenue" placeholder="Faturamento Mensal (R$)" class="w-full p-4 rounded-sm text-sm">
+                <div>
+                    <label for="revenue" class="sr-only">Faturamento Mensal (R$)</label>
+                    <input type="number" id="revenue" aria-describedby="revenue-error" placeholder="Faturamento Mensal (R$)" class="w-full p-4 rounded-sm text-sm">
+                    <div class="min-h-[16px] mt-2" aria-live="polite">
+                        <span id="revenue-error" class="text-red-400 text-xs hidden"></span>
+                    </div>
+                </div>
                 <button onclick="calcTax()" class="w-full btn-minimal p-4 text-xs uppercase tracking-widest font-bold">Simular Resultado</button>
-                <div id="result-box" class="hidden text-center py-6 border-t border-white/10">
+                <div id="result-box" aria-live="polite" class="hidden text-center py-6 border-t border-white/10">
                     <p id="taxResult" class="text-3xl font-light serif"></p>
                     <p class="text-zinc-500 text-[10px] uppercase tracking-widest mt-2">Saldo Líquido Estimado</p>
                 </div>
@@ -71,11 +76,19 @@
             const rev = document.getElementById('revenue').value;
             const resBox = document.getElementById('result-box');
             const resText = document.getElementById('taxResult');
-            if(rev) {
-                const liquid = rev - 75; // Average DAS
-                resText.innerText = `R$ ${liquid.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
-                resBox.classList.remove('hidden');
+            const errorMsg = document.getElementById('revenue-error');
+
+            if(!rev) {
+                errorMsg.innerText = "Por favor, insira um valor válido.";
+                errorMsg.classList.remove('hidden');
+                resBox.classList.add('hidden');
+                return;
             }
+
+            errorMsg.classList.add('hidden');
+            const liquid = rev - 75; // Average DAS
+            resText.innerText = `R$ ${liquid.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
+            resBox.classList.remove('hidden');
         }
     </script>
 </body>
