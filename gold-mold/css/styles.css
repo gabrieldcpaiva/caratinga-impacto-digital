@@ -38,6 +38,16 @@ h1, h2, h3, h4, .serif {
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
+/* Focus visible */
+*:focus-visible {
+    outline: 2px solid var(--accent-clay);
+    outline-offset: 2px;
+}
+
+.btn-primary:focus-visible {
+    outline-color: var(--primary-moss);
+}
+
 /* Luxury Texture: Noise Overlay */
 body::before {
     content: "";
