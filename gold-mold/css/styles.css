@@ -140,6 +140,11 @@ input:focus {
     border-color: var(--primary-moss);
 }
 
+*:focus-visible {
+    outline: 2px solid var(--accent-clay);
+    outline-offset: 2px;
+}
+
 /* Animations */
 @keyframes fadeInBlur {
     from { opacity: 0; filter: blur(10px); transform: translateY(20px); }
