@@ -6,3 +6,7 @@
 ## 2024-05-16 - Missing Inline Validation and ARIA Live Regions
 **Learning:** Dynamic calculators in the project (like the MEI tax calculator in 'solucao') lacked inline validation feedback for empty submissions and did not announce result updates to screen readers, causing a confusing experience for assistive technologies.
 **Action:** Always provide inline validation feedback linked via `aria-describedby` when validating dynamic inputs. Wrap error messages and dynamic result containers in `aria-live="polite"` so screen readers announce state changes smoothly without interrupting the user. Ensure error containers have a minimum height (e.g., `min-h-[16px]`) to prevent layout jank.
+
+## 2024-05-17 - Keyboard Navigation Support
+**Learning:** The project lacked keyboard navigation support as custom UI components did not have explicit focus styles defined, making it difficult for keyboard users to navigate the app. Adding global `:focus` styles could disrupt mouse and touch users who don't expect a visible focus ring on click.
+**Action:** Always ensure custom UI components have explicit `*:focus-visible` styles defined in the root CSS files (`void-styles.css`, `proposta-styles.css`, and `gold-mold/css/styles.css`). Use appropriate contrast colors (e.g., `white` for dark themes and `--accent-clay` for light themes) to ensure focus rings are visible.
