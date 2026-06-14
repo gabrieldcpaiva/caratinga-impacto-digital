@@ -155,3 +155,9 @@ input:focus {
     section { padding: 60px 0; }
     h1 { font-size: 42px !important; }
 }
+
+/* Accessibility: Keyboard Focus */
+*:focus-visible {
+    outline: 2px solid var(--accent-clay);
+    outline-offset: 2px;
+}
