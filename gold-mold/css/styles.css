@@ -136,7 +136,7 @@ input {
     transition: border-color 0.3s var(--transition-smooth);
 }
 
-input:focus {
+input:focus-visible {
     border-color: var(--primary-moss);
 }
 
@@ -154,4 +154,9 @@ input:focus {
 @media (max-width: 480px) {
     section { padding: 60px 0; }
     h1 { font-size: 42px !important; }
+}
+
+*:focus-visible {
+    outline: 2px solid var(--accent-clay);
+    outline-offset: 2px;
 }
