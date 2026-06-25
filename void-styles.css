@@ -6,4 +6,9 @@ body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: #ffff
 .btn-minimal { border: 1px solid white; transition: all 0.3s; }
 .btn-minimal:hover { background: white; color: black; }
 input:not([type="checkbox"]) { background: transparent; border: 1px solid rgba(255, 255, 255, 0.2); color: white; outline: none; }
-input:not([type="checkbox"]):focus { border-color: white; }
+input:not([type="checkbox"]):focus-visible { border-color: white; }
+
+*:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
