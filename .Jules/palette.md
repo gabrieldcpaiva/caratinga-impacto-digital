@@ -10,3 +10,7 @@
 ## 2024-06-25 - Explicit Focus Visible Styles
 **Learning:** Custom UI components and inputs lacked explicit `:focus-visible` styles, relying only on browser defaults or the `:focus` pseudo-class which disrupts mouse users.
 **Action:** Always ensure explicit `*:focus-visible` styles are defined in the root CSS files for keyboard accessibility, using appropriate contrast colors (e.g., `--accent-clay` for light themes and `white` for dark themes).
+
+## 2024-06-26 - Missing Label Form Associations and aria-live missing in result boxes
+**Learning:** The `simulateDemand` calculators in the various landing pages (like `gold-mold/index.html`) lacked inline validation feedback for empty inputs and were missing `aria-live="polite"` on the result containers. This leads to poor accessibility, as screen readers are not alerted when the calculated demand appears.
+**Action:** Always provide inline validation and link it via `aria-describedby`. Ensure dynamic result boxes have `aria-live="polite"` to proactively announce updates.
