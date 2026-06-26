@@ -64,11 +64,14 @@
 
                 <div class="card" style="background: var(--bg-cream); border: none;">
                     <label for="ticket" class="sans" style="font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 12px;">Ticket Médio Mensalista (R$)</label>
-                    <input type="number" id="ticket" placeholder="Ex: 300" value="300">
+                    <input type="number" id="ticket" aria-describedby="ticket-error" placeholder="Ex: 300" value="300">
+                    <div style="min-height: 18px; margin-top: 8px;" aria-live="polite">
+                        <span id="ticket-error" class="sans" style="font-size: 12px; color: var(--accent-clay); display: none;">Por favor, insira um valor válido.</span>
+                    </div>
                     
                     <button onclick="simulateDemand()" class="btn-primary btn-accent" style="margin-top: 24px;">Calcular Oportunidade</button>
 
-                    <div id="demand-result" style="display: none; margin-top: 40px; text-align: center; animation: fadeInBlur 0.8s ease forwards;">
+                    <div id="demand-result" aria-live="polite" style="display: none; margin-top: 40px; text-align: center; animation: fadeInBlur 0.8s ease forwards;">
                         <p class="sans" style="font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--primary-moss); margin-bottom: 8px;">Análise Estacionamento</p>
                         <h3 id="lost-revenue" style="font-size: 48px; color: var(--text-charcoal); margin-bottom: 12px;">R$ 0,00</h3>
                         <p style="font-size: 14px; color: #555; max-width: 300px; margin: 0 auto;">
@@ -105,17 +108,24 @@
             const ticket = document.getElementById('ticket').value;
             const resultBox = document.getElementById('demand-result');
             const revenueText = document.getElementById('lost-revenue');
+            const errorMsg = document.getElementById('ticket-error');
             
-            if(ticket) {
-                // Simulation logic: For Parking, high churn/volume.
-                // Lost ~10 mensalistas or equivalent daily flow.
-                const lostClients = 10; 
-                const lostMoney = ticket * lostClients;
-                
-                revenueText.innerText = `R$ ${lostMoney.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
-                resultBox.style.display = 'block';
-                resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            if(!ticket) {
+                errorMsg.style.display = 'block';
+                resultBox.style.display = 'none';
+                return;
             }
+
+            errorMsg.style.display = 'none';
+
+            // Simulation logic: For Parking, high churn/volume.
+            // Lost ~10 mensalistas or equivalent daily flow.
+            const lostClients = 10;
+            const lostMoney = ticket * lostClients;
+
+            revenueText.innerText = `R$ ${lostMoney.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
+            resultBox.style.display = 'block';
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
     </script>
 </body>
