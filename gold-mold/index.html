@@ -64,11 +64,14 @@
 
                 <div class="card" style="background: var(--bg-cream); border: none;">
                     <label for="ticket" class="sans" style="font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 12px;">Seu Faturamento Médio por Cliente (R$)</label>
-                    <input type="number" id="ticket" placeholder="Ex: 500" style="margin-bottom: 24px;">
+                    <input type="number" id="ticket" placeholder="Ex: 500" aria-describedby="ticket-error" style="margin-bottom: 8px;">
+                    <div style="min-height: 18px; margin-bottom: 16px;" aria-live="polite">
+                        <span id="ticket-error" style="color: #ef4444; font-size: 12px; display: none;">Por favor, insira um valor válido.</span>
+                    </div>
                     
                     <button onclick="simulateDemand()" class="btn-primary btn-accent">Calcular Oportunidade</button>
 
-                    <div id="demand-result" style="display: none; margin-top: 40px; text-align: center; animation: fadeInBlur 0.8s ease forwards;">
+                    <div id="demand-result" aria-live="polite" style="display: none; margin-top: 40px; text-align: center; animation: fadeInBlur 0.8s ease forwards;">
                         <p class="sans" style="font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--primary-moss); margin-bottom: 8px;">Resultado da Análise</p>
                         <h3 id="lost-revenue" style="font-size: 48px; color: var(--text-charcoal); margin-bottom: 12px;">R$ 0,00</h3>
                         <p style="font-size: 14px; color: #555; max-width: 300px; margin: 0 auto;">
@@ -106,7 +109,15 @@
             const ticket = document.getElementById('ticket').value;
             const resultBox = document.getElementById('demand-result');
             const revenueText = document.getElementById('lost-revenue');
+            const errorMsg = document.getElementById('ticket-error');
             
+            if(!ticket || ticket <= 0) {
+                errorMsg.style.display = 'block';
+                resultBox.style.display = 'none';
+                return;
+            }
+
+            errorMsg.style.display = 'none';
             if(ticket) {
                 // Simulation logic: In Caratinga, a typical niche has ~150-300 lost searches/month
                 // If they capture 5% of that, it's ~10 clients.
