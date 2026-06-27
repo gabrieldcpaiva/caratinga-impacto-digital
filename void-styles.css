@@ -12,3 +12,9 @@ input:not([type="checkbox"]):focus-visible { border-color: white; }
     outline: 2px solid white;
     outline-offset: 2px;
 }
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
