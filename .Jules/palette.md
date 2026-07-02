@@ -10,3 +10,7 @@
 ## 2024-06-25 - Explicit Focus Visible Styles
 **Learning:** Custom UI components and inputs lacked explicit `:focus-visible` styles, relying only on browser defaults or the `:focus` pseudo-class which disrupts mouse users.
 **Action:** Always ensure explicit `*:focus-visible` styles are defined in the root CSS files for keyboard accessibility, using appropriate contrast colors (e.g., `--accent-clay` for light themes and `white` for dark themes).
+
+## 2024-07-02 - Vestibular Accessibility with scrollIntoView
+**Learning:** JS smooth scrolling (`scrollIntoView({ behavior: 'smooth' })`) ignores CSS media queries for `prefers-reduced-motion`, causing vestibular accessibility issues for users with reduced motion preferences enabled.
+**Action:** Always conditionally apply `behavior: 'smooth'` by checking `!window.matchMedia('(prefers-reduced-motion: reduce)').matches` when using `scrollIntoView` in JavaScript.
