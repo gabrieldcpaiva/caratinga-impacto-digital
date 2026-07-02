@@ -68,7 +68,7 @@
                     
                     <button onclick="simulateDemand()" class="btn-primary btn-accent">Calcular Oportunidade</button>
 
-                    <div id="demand-result" style="display: none; margin-top: 40px; text-align: center; animation: fadeInBlur 0.8s ease forwards;">
+                    <div id="demand-result" aria-live="polite" style="display: none; margin-top: 40px; text-align: center; animation: fadeInBlur 0.8s ease forwards;">
                         <p class="sans" style="font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--primary-moss); margin-bottom: 8px;">Resultado da Análise</p>
                         <h3 id="lost-revenue" style="font-size: 48px; color: var(--text-charcoal); margin-bottom: 12px;">R$ 0,00</h3>
                         <p style="font-size: 14px; color: #555; max-width: 300px; margin: 0 auto;">
@@ -116,7 +116,7 @@
                 revenueText.innerText = `R$ ${lostMoney.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
                 resultBox.style.display = 'block';
                 
-                resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                resultBox.scrollIntoView({ behavior: !window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'smooth' : 'auto', block: 'center' });
             }
         }
     </script>
