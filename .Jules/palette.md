@@ -10,3 +10,7 @@
 ## 2024-06-25 - Explicit Focus Visible Styles
 **Learning:** Custom UI components and inputs lacked explicit `:focus-visible` styles, relying only on browser defaults or the `:focus` pseudo-class which disrupts mouse users.
 **Action:** Always ensure explicit `*:focus-visible` styles are defined in the root CSS files for keyboard accessibility, using appropriate contrast colors (e.g., `--accent-clay` for light themes and `white` for dark themes).
+
+## 2024-07-15 - Respect Prefers Reduced Motion for Smooth Scrolling
+**Learning:** Hardcoding `{ behavior: 'smooth' }` in `scrollIntoView` calls forces animations even for users with vestibular disorders who have enabled reduced motion in their OS.
+**Action:** Always wrap smooth scrolling or CSS animations inside a check for `window.matchMedia('(prefers-reduced-motion: reduce)').matches` to gracefully degrade to instant scrolling (`'auto'`) when necessary.
