@@ -115,7 +115,8 @@
                 revenueText.innerText = `R$ ${lostMoney.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
                 resultBox.style.display = 'block';
                 
-                resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                resultBox.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
             }
         }
     </script>
