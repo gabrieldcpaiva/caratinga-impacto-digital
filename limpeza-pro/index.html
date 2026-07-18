@@ -115,7 +115,11 @@
                 revenueText.innerText = `R$ ${lostMoney.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
                 resultBox.style.display = 'block';
                 
-                resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                    resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    resultBox.scrollIntoView({ block: 'center' });
+                }
             }
         }
     </script>
